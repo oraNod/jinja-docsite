@@ -32,5 +32,5 @@ if __name__ == "__main__":
 
 
     shutil.copytree('static', 'build/static')
-    shutil.copytree('oldsite', 'build/oldsite')
+    shutil.move('build/ecosystem.html', 'build/index.html')
     sass.compile(dirname=('sass', 'build/static/css'))
