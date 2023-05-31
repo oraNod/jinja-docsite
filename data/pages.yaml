@@ -1,6 +1,7 @@
 # Latest Ansible package version
 ansible_pkg:
-  announce: Ansible 7 is now available
+  redirect: You can find user guides and more in the <a href="https://docs.ansible.com/ansible/latest/index.html" target="_blank">Ansible package documentation</a>.
+  announce: Ansible 8 is now available
   pip_install: pip install ansible
   docs: Ansible package docs home
   module_index: Index of modules and plugins
