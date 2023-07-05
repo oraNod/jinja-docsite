@@ -1,0 +1,48 @@
+{% extends "base.tmpl" %}
+{% block body %}
+<div class="container">
+  <div class="full-width-bg component">
+    <div class="grid-wrapper">
+      <div class="width-3-12 width-12-12-m">
+        <img class="page-logo" src="static/images/community_logo.svg">
+      </div>
+      <div class="width-8-12 width-12-12-m">
+        <div class="page-title">
+          <h2>{{ pages.ecosystem.title }}</h2>
+          <p>{{ pages.ecosystem.intro }}</p>
+          <p class="feedback">{{ pages.feedback }}</p>
+        </div>
+      </div>
+      <!-- Start old docsite toggle. -->
+      <div class="width-1-12 width-12-12-m">
+        <div class="toggle">
+          <p>{{ pages.take_me_back }}&nbsp;
+            <label class="switch">
+              <input type="checkbox" id="page-toggle">
+              <span class="slider round"></span>
+            </label>
+          </p>
+        </div>
+      </div>
+      <!-- End old docsite toggle. -->
+      <!-- Start ecosystem projects -->
+      {% for key, item in ecosystem.items() %}
+      <div class="width-6-12 width-12-12-m">
+        <h5>{{ item.name }}</h5>
+        <p>{{ item.description }}</p>
+        {% if item.docs.home %}
+        <p><a class="btn" href="{{ item.docs.home }}" role="button">{{ item.name }} documentation</a></p>
+        {% else %}
+        <div class="btn-group-vertical" role="group" aria-label="{{ pages.labels.button_group }}">
+          {% for key, item in item.docs.items() %}
+          <a class="btn" href="{{ item.link }}" role="button">{{ item.button }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+      <!-- End ecosystem projects -->
+    </div>
+  </div>
+</div>
+{% endblock %}

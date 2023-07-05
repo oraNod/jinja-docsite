@@ -1,0 +1,4 @@
+Sitemap: https://docs.ansible.com/sitemapindex.xml
+
+User-Agent: *
+Host: docs.ansible.com
